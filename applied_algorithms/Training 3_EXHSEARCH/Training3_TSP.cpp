@@ -10,17 +10,6 @@ int path[N];
 int path_cost[N];
 int costMin = INT_MAX;
 
-void inputData() {
-
-    cin >> n >> m;
-
-    int temp1, temp2, temp3;
-    for (int i = 0; i < m; i++) {
-        cin >> temp1 >> temp2 >> temp3;
-        cost[temp1][temp2] = temp3;
-    }
-}
-
 bool checked(int a, int i) {
 
     // no path
@@ -56,7 +45,7 @@ void Try(int a) {
             if (a == n) {
                 solution();
             } else {
-                if (path_cost[a] < costMin) { // Nhanh can
+                if (path_cost[a] < costMin) {
                     Try(a + 1);
                 }
             }
@@ -67,6 +56,14 @@ void Try(int a) {
 }
 
 int main() {
+
+    cin >> n >> m;
+
+    int temp1, temp2, temp3;
+    for (int i = 0; i < m; i++) {
+        cin >> temp1 >> temp2 >> temp3;
+        cost[temp1][temp2] = temp3;
+    }
 
     visited[1] = true;
     path[1] = 1;
