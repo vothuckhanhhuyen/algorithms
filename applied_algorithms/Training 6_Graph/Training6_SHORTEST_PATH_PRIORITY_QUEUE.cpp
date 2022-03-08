@@ -21,6 +21,7 @@ int main() {
     int s, t;
     cin >> s >> t;
 
+    // Dijiktra
     vector<int> dist(n + 1, INT_MAX);
     priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> PQ;
     dist[s] = 0;
